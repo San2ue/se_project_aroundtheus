@@ -1,21 +1,18 @@
 # Project 3: Around The U.S.
 
-### Overview  
+project 3 is about using Figma to create a web page in the format most likely used in the work place.
+And to make that web page responsive for multiple screen types.
 
-* Intro  
-* Figma  
-* Images  
-  
-**Intro**
-  
-This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.  
-  
-**Figma**  
-  
-* [Link to the project on Figma](https://www.figma.com/file/ii4xxsJ0ghevUOcssTlHZv/Sprint-3%3A-Around-the-US?node-id=0%3A1)  
-  
-**Images**  
-  
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
-  
-Good luck and have fun!
+skills
+
+- figma
+- CSS ( grid and @media tags being new)
+- HTML 5
+
+# link to GitHub Pages
+
+1. [link to GitHub pages](https://San2ue.github.io/se_project_aroundtheus)
+
+# link to video
+
+1. is forth comming.
