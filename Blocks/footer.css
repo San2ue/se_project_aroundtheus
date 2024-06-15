@@ -1,9 +1,21 @@
 .footer {
   color: #545454;
   padding-top: 67px;
-  padding-bottom: 60px;
 }
 
 .footer__copyright {
   margin: 0;
+  font-size: 18px;
+  line-height: 1.21;
+}
+
+@media screen and (max-width: 480px) {
+  .footer {
+    padding-top: 40px;
+  }
+
+  .footer__copyright {
+    font-size: 14px;
+    line-height: 1.178;
+  }
 }

@@ -6,38 +6,34 @@
   justify-content: center;
 }
 
-.card__list {
+.cards__list {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-.card {
+.cards__item {
   width: 282px;
-  height: 361px;
   overflow: hidden;
   color: #000;
   border-radius: 10px;
 }
 
-.card__image {
+.cards__image {
   height: 282px;
   width: 282px;
 }
 
-.card__description {
+.cards__description {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 0;
   background-color: #fff;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 25px 20px;
 }
 
-.card__title {
+.cards__title {
   max-width: 219px;
   margin: 0;
   font-weight: 900;
@@ -48,12 +44,17 @@
   overflow: hidden;
 }
 
-.card__heart {
+.cards__heart {
   background: transparent url(../Images/Heart.svg) center no-repeat;
   height: 18px;
   width: 21px;
   border: none;
   padding: 0;
+  cursor: pointer;
+}
+
+.cards__heart:hover {
+  opacity: 60%;
 }
 
 @media screen and (max-width: 480px) {
