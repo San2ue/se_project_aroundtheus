@@ -13,7 +13,7 @@
   object-position: center;
 }
 
-.Profile__info {
+.profile__info {
   display: grid;
   grid-template-areas: "title edit" "description description";
   grid-template-columns: minmax(min-content, max-content) auto;
@@ -28,6 +28,8 @@
   margin: 0;
   grid-area: title;
   white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .profile__edit-button {
@@ -114,5 +116,10 @@
   .profile__edit-button {
     height: 18px;
     width: 18px;
+  }
+
+  .profile__description {
+    font-size: 14px;
+    line-height: 1.21;
   }
 }

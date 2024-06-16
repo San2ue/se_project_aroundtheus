@@ -54,7 +54,7 @@
 }
 
 .cards__heart:hover {
-  opacity: 60%;
+  opacity: 50%;
 }
 
 @media screen and (max-width: 480px) {
