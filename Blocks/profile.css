@@ -87,6 +87,10 @@
     justify-content: center;
   }
 
+  .profile__title{
+    max-width: 375px;
+  }
+
   .profile__pic {
     margin: 0 0 32px;
   }
