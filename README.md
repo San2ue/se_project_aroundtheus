@@ -3,11 +3,17 @@
 project 3 is about using Figma to create a web page in the format most likely used in the work place.
 And to make that web page responsive for multiple screen types.
 
-skills
+# project 4: Around the U.S.
+
+Project 4 is about setting up javascript for future projects and showing that we understand the basics
+of Arrays and object structure.
+
+# skills
 
 - figma
-- CSS ( grid and @media tags being new)
+- CSS
 - HTML 5
+- javascript (arrays, and objects)
 
 # link to GitHub Pages
 
