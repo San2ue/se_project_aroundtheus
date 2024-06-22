@@ -34,7 +34,7 @@
 
 .profile__edit-button {
   grid-area: edit;
-  background: transparent url(../Images/Edit.svg) center no-repeat;
+  background: transparent url(../images/edit.svg) center no-repeat;
   width: 24px;
   height: 24px;
   border: 1px solid #fff;
@@ -59,7 +59,7 @@
 }
 
 .profile__add-content {
-  background: transparent url(../Images/Add.svg) center no-repeat;
+  background: transparent url(../images/add.svg) center no-repeat;
   height: 50px;
   width: 150px;
   border: 2px solid #fff;

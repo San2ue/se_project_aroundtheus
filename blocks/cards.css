@@ -45,7 +45,7 @@
 }
 
 .cards__heart {
-  background: transparent url(../Images/Heart.svg) center no-repeat;
+  background: transparent url(../images/heart.svg) center no-repeat;
   height: 18px;
   width: 21px;
   border: none;
