@@ -81,7 +81,7 @@
   line-height: 1.21;
 }
 
-.modal__save-button {
+.modal__save_input {
   background-color: #000;
   color: #fff;
   font-weight: 400;
@@ -96,7 +96,7 @@
   cursor: pointer;
 }
 
-.modal__save-button:hover {
+.modal__save_input:hover {
   opacity: 80%;
 }
 
