@@ -55,7 +55,7 @@
   margin-bottom: 30px;
 }
 
-.modal__title_input {
+.modal__title-input {
   width: 358px;
   height: 27px;
   padding: 0;
@@ -70,7 +70,7 @@
   margin-bottom: 48px;
 }
 
-.modal__description_input {
+.modal__description-input {
   width: 358px;
   height: 27px;
   padding: 0;
@@ -81,7 +81,7 @@
   line-height: 1.21;
 }
 
-.modal__save_input {
+.modal__save-input {
   background-color: #000;
   color: #fff;
   font-weight: 400;
@@ -96,7 +96,7 @@
   cursor: pointer;
 }
 
-.modal__save_input:hover {
+.modal__save-input:hover {
   opacity: 80%;
 }
 
@@ -118,15 +118,15 @@
     padding-bottom: 75px;
   }
 
-  .modal__button_save {
+  .modal__save-input {
     width: 238px;
   }
 
-  .modal__description_input {
+  .modal__description-input {
     width: 238px;
   }
 
-  .modal__title_input {
+  .modal__title-input {
     width: 238px;
   }
 }
