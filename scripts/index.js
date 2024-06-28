@@ -28,4 +28,29 @@ const cardData6 = {
   link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lago.jpg",
 };
 
-const initialCards = [cardData1, cardData2, cardData3, cardData4, cardData5, cardData6];
+const initialCards = [
+  cardData1,
+  cardData2,
+  cardData3,
+  cardData4,
+  cardData5,
+  cardData6,
+];
+
+const profileEditBtn = document.querySelector(".profile__edit-button");
+
+let modal = document.querySelector(".modal");
+
+const closeButton = document.querySelector(".modal__close");
+
+function openEdit() {
+  modal.classList.add("modal__open");
+}
+
+profileEditBtn.addEventListener("click", openEdit);
+
+function closeEdit() {
+  modal.classList.remove("modal__open");
+}
+
+closeButton.addEventListener("click", closeEdit);
