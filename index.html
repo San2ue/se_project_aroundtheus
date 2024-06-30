@@ -33,84 +33,7 @@
           <button class="profile__add-content" type="button"></button>
         </section>
         <section class="cards">
-          <ul class="cards__list">
-            <li class="cards__item">
-              <img
-                src="./images/yosemite.jpg"
-                alt="Yosemite Valley Imagery"
-                class="cards__image"
-              />
-              <div class="cards__description">
-                <h2 class="cards__title">Yosemite Valley</h2>
-                <button class="cards__heart" type="button"></button>
-              </div>
-            </li>
-          </ul>
-          <ul class="cards__list">
-            <li class="cards__item">
-              <img
-                src="./images/lake-louise.jpg"
-                alt="Lake Louise Imagery"
-                class="cards__image"
-              />
-              <div class="cards__description">
-                <h2 class="cards__title">Lake Louise</h2>
-                <button class="cards__heart" type="button"></button>
-              </div>
-            </li>
-          </ul>
-          <ul class="cards__list">
-            <li class="cards__item">
-              <img
-                src="./images/bald-mountains.jpg"
-                alt="Bald Mountains Imagery"
-                class="cards__image"
-              />
-              <div class="cards__description">
-                <h2 class="cards__title">Bald Mountains</h2>
-                <button class="cards__heart" type="button"></button>
-              </div>
-            </li>
-          </ul>
-          <ul class="cards__list">
-            <li class="cards__item">
-              <img
-                src="./images/latemar.jpg"
-                alt="Latemar Imagery"
-                class="cards__image"
-              />
-              <div class="cards__description">
-                <h2 class="cards__title">Latemar</h2>
-                <button class="cards__heart" type="button"></button>
-              </div>
-            </li>
-          </ul>
-          <ul class="cards__list">
-            <li class="cards__item">
-              <img
-                src="./images/vanoise.jpg"
-                alt="Imagery of Vanoise National park"
-                class="cards__image"
-              />
-              <div class="cards__description">
-                <h2 class="cards__title">Vanoise National Park</h2>
-                <button class="cards__heart" type="button"></button>
-              </div>
-            </li>
-          </ul>
-          <ul class="cards__list">
-            <li class="cards__item">
-              <img
-                src="./images/lago.jpg"
-                alt="Lago di Braies Imagery"
-                class="cards__image"
-              />
-              <div class="cards__description">
-                <h2 class="cards__title">Lago di Braies</h2>
-                <button class="cards__heart" type="button"></button>
-              </div>
-            </li>
-          </ul>
+          <ul class="cards__list"></ul>
         </section>
       </main>
       <footer class="footer page__section">
@@ -127,7 +50,7 @@
                   type="text"
                   name="Title"
                   class="modal__title-input"
-                  value="Jacques Cousteau"
+                  value=""
                 />
               </li>
               <li class="modal__description">
@@ -135,7 +58,7 @@
                   type="text"
                   name="description"
                   class="modal__description-input"
-                  value="Explorer"
+                  value=""
                 />
               </li>
               <li class="modal__save">
@@ -145,6 +68,15 @@
           </form>
         </div>
       </div>
+      <template id="card__template">
+        <li class="cards__item">
+          <img src="" alt="" class="cards__image" />
+          <div class="cards__description">
+            <h2 class="cards__title"></h2>
+            <button class="cards__heart" type="button"></button>
+          </div>
+        </li>
+      </template>
     </div>
     <script src="./scripts/index.js"></script>
   </body>
