@@ -27,10 +27,18 @@
           />
           <div class="profile__info">
             <h1 class="profile__title">Jacques Cousteau</h1>
-            <button class="profile__edit-button" type="button"></button>
+            <button
+              aria-label="Edit Profile"
+              class="profile__edit-button"
+              type="button"
+            ></button>
             <p class="profile__description">Explorer</p>
           </div>
-          <button class="profile__add-content" type="button"></button>
+          <button
+            aria-label="add content"
+            class="profile__add-content"
+            type="button"
+          ></button>
         </section>
         <section class="cards">
           <ul class="cards__list"></ul>
@@ -41,30 +49,30 @@
       </footer>
       <div class="modal">
         <div class="modal__container">
-          <button class="modal__close"></button>
-          <p class="modal__heading">Edit profile</p>
+          <button
+            aria-label="Close"
+            class="modal__close"
+            type="button"
+          ></button>
+          <h3 class="modal__heading">Edit profile</h3>
           <form class="modal__form">
-            <ul class="modal__list">
-              <li class="modal__title">
-                <input
-                  type="text"
-                  name="Title"
-                  class="modal__title-input"
-                  value=""
-                />
-              </li>
-              <li class="modal__description">
-                <input
-                  type="text"
-                  name="description"
-                  class="modal__description-input"
-                  value=""
-                />
-              </li>
-              <li class="modal__save">
-                <button class="modal__save-input">Save</button>
-              </li>
-            </ul>
+            <input
+              type="text"
+              name="Title"
+              class="modal__title modal__input"
+              value=""
+              placeholder="Name"
+              required
+            />
+            <input
+              type="text"
+              name="description"
+              class="modal__description modal__input"
+              value=""
+              placeholder="Job Title"
+              required
+            />
+            <button class="modal__save" type="submit">Save</button>
           </form>
         </div>
       </div>
@@ -73,7 +81,11 @@
           <img src="" alt="" class="cards__image" />
           <div class="cards__description">
             <h2 class="cards__title"></h2>
-            <button class="cards__heart" type="button"></button>
+            <button
+              aria-label="Like"
+              class="cards__heart"
+              type="button"
+            ></button>
           </div>
         </li>
       </template>
