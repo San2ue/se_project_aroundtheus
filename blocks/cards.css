@@ -16,12 +16,37 @@
   width: 282px;
   overflow: hidden;
   color: #000;
+  position: relative;
   border-radius: 10px;
+}
+
+.cards__zoom {
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
 }
 
 .cards__image {
   height: 282px;
   width: 282px;
+}
+
+.cards__delete {
+  background: transparent url(../images/trash.svg) center no-repeat;
+  height: 19px;
+  width: 18px;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 18px;
+  right: 15px;
+  z-index: 5;
+}
+
+.cards__delete:hover {
+  opacity: 60%;
 }
 
 .cards__description {
@@ -51,6 +76,10 @@
   border: none;
   padding: 0;
   cursor: pointer;
+}
+
+.cards__heart_active {
+  background-image: url(../images/heart-active.svg);
 }
 
 .cards__heart:hover {

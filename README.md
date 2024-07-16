@@ -8,12 +8,16 @@ And to make that web page responsive for multiple screen types.
 Project 4 is about setting up javascript for future projects and showing that we understand the basics
 of Arrays and object structure. As well as setting up a user function to be able to edit profile name and description. Also removing the hard coded cards(images and thier names) and setting them up for future use.
 
+# project 5: Around the U.S.
+
+details in coming
+
 # skills
 
 - figma
 - CSS
 - HTML 5
-- javascript (arrays, objects, functions, query calls, and for/while)
+- javascript (arrays, objects, functions, query calls, for/while, foreach, and =>(arrow functions))
 
 # link to GitHub Pages
 

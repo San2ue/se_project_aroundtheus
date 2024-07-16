@@ -1,5 +1,7 @@
 .modal {
-  display: none;
+  transition: opacity 0.5s ease-out;
+  opacity: 0;
+  visibility: hidden;
   position: fixed;
   top: 0;
   left: 0;
@@ -14,6 +16,8 @@
 
 .modal_open {
   display: flex;
+  opacity: 1;
+  visibility: visible;
 }
 
 .modal__container {
@@ -23,6 +27,23 @@
   position: relative;
   width: 430px;
   box-sizing: border-box;
+}
+
+.modal__image-container {
+  position: relative;
+}
+
+.modal__image {
+  max-width: 75vw;
+  max-height: 75vh;
+}
+
+.modal__image-title {
+  color: #fff;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.21;
+  margin: 10px 0 0;
 }
 
 .modal__close {
