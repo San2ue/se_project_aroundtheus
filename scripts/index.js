@@ -26,7 +26,6 @@ const initialCards = [
 ];
 
 // Elements
-
 const profileEditBtn = document.querySelector(".profile__edit-button");
 const profileAddBtn = document.querySelector(".profile__add-content");
 const profileName = document.querySelector(".profile__name");
@@ -103,6 +102,12 @@ function getCardElement(cardData) {
   cardTitle.textContent = cardData.name;
 
   return cardElement;
+}
+
+function keyHandler(evt) {
+  if (evt.key === "Esc") {
+    toggleModal(modal);
+  }
 }
 
 // Listeners

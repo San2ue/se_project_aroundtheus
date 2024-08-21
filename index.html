@@ -56,21 +56,33 @@
             type="button"
           ></button>
           <h3 class="modal__heading">Edit profile</h3>
-          <form class="modal__form" id="edit-form">
-            <input
-              type="text"
-              name="name"
-              class="modal__name modal__input"
-              placeholder="Name"
-              required
-            />
-            <input
-              type="text"
-              name="description"
-              class="modal__description modal__input"
-              placeholder="Job Title"
-              required
-            />
+          <form class="modal__form" id="edit-form" novalidate>
+            <label class="modal__label">
+              <input
+                type="text"
+                name="name"
+                id="owner-name"
+                class="modal__name modal__input"
+                placeholder="Name"
+                minlength="2"
+                maxlength="40"
+                required
+              />
+              <span class="modal__error" id="owner-name-error"></span>
+            </label>
+            <label class="modal__label">
+              <input
+                type="text"
+                name="description"
+                id="owner-description"
+                class="modal__description modal__input"
+                placeholder="Job Title"
+                minlength="2"
+                maxlength="200"
+                required
+              />
+              <span class="modal__error" id="owner-description-error"></span>
+            </label>
             <button class="modal__save" type="submit">Save</button>
           </form>
         </div>
@@ -84,25 +96,38 @@
             type="button"
           ></button>
           <h3 class="modal__heading">New Place</h3>
-          <form class="modal__form" id="add-card">
-            <input
-              type="text"
-              name="Title"
-              class="modal__title modal__input"
-              placeholder="Title"
-              required
-            />
-            <input
-              type="text"
-              name="url"
-              class="modal__url modal__input"
-              placeholder="Image link"
-              required
-            />
-            <button class="modal__save" type="submit">Save</button>
+          <form class="modal__form" id="add-card" novalidate>
+            <label class="modal__label">
+              <input
+                type="text"
+                name="Title"
+                id="card-title"
+                class="modal__title modal__input"
+                placeholder="Title"
+                minlength="1"
+                maxlength="30"
+                required
+              />
+              <span class="modal__error" id="card-title-error"></span>
+            </label>
+            <label class="modal__label">
+              <input
+                type="url"
+                name="url"
+                id="card-url"
+                class="modal__url modal__input"
+                placeholder="Image link"
+                required
+              />
+              <span class="modal__error" id="card-url-error"></span>
+            </label>
+            <button class="modal__save modal__save_disabled" type="submit">
+              Save
+            </button>
           </form>
         </div>
       </div>
+      <!--Picture modal-->
       <div class="modal" id="picture-modal">
         <div class="modal__image-container">
           <img src="" alt="" class="modal__image" />
@@ -114,6 +139,7 @@
           <h4 class="modal__image-title"></h4>
         </div>
       </div>
+      <!--Card's Template-->
       <template id="card__template">
         <li class="cards__item">
           <button type="button" class="cards__zoom">
@@ -132,5 +158,6 @@
       </template>
     </div>
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/validation.js"></script>
   </body>
 </html>
