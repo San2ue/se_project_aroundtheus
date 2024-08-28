@@ -54,6 +54,8 @@ const cardTemplate =
 
 function toggleModal(modal) {
   modal.classList.toggle("modal_open");
+  modal.addEventListener("mousedown", closeOverlay);
+  document.addEventListener("keydown", closeModalEsc);
 }
 
 function generateCard(cardData, wrapper) {
@@ -104,9 +106,17 @@ function getCardElement(cardData) {
   return cardElement;
 }
 
-function keyHandler(evt) {
-  if (evt.key === "Esc") {
-    toggleModal(modal);
+function closeModalEsc(evt) {
+  if (evt.key === "Escape") {
+    const modalOpened = document.querySelector(".modal_open");
+    toggleModal(modalOpened);
+  }
+}
+
+function closeOverlay(evt) {
+  if (evt.target.classList.contains("modal_open")) {
+    const modalOpened = document.querySelector(".modal_open");
+    toggleModal(modalOpened);
   }
 }
 
