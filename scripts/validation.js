@@ -43,7 +43,7 @@ function setEventListeners(formEl, options) {
   const inputElements = Array.from(
     formEl.querySelectorAll(options.inputSelector)
   );
-  const buttonElements = formEl.querySelector(".modal__save");
+  const buttonElements = formEl.querySelector(options.submitBtnSelector);
   inputElements.forEach((inputEl) => {
     inputEl.addEventListener("input", () => {
       checkInputValidity(formEl, inputEl, options);
