@@ -87,7 +87,7 @@ function saveCards(event) {
   const cardData = { name, link };
   const cardElement = getCardElement(cardData);
   cardList.prepend(cardElement);
-  cardFormValidator.toggleBtn();
+  cardFormValidator.toggleButtonState();
   closeModal(addCardModal);
   event.target.reset();
 }
