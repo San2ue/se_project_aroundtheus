@@ -1,5 +1,5 @@
-import Card from "../components/card.js";
-import FormValidator from "../components/formvalidator.js";
+import Card from "../components/Card.js";
+import FormValidator from "../components/Formvalidator.js";
 
 const initialCards = [
   {
@@ -65,6 +65,7 @@ function openModal(modal) {
   modal.classList.add("modal_open");
   modal.addEventListener("mousedown", closeOverlay);
   document.addEventListener("keydown", closeModalEsc);
+  cardFormValidator.resetValidation();
 }
 
 function closeModal(modal) {
@@ -87,7 +88,6 @@ function saveCards(event) {
   const cardData = { name, link };
   const cardElement = getCardElement(cardData);
   cardList.prepend(cardElement);
-  cardFormValidator.toggleButtonState();
   closeModal(addCardModal);
   event.target.reset();
 }
