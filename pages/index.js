@@ -1,5 +1,5 @@
 import Card from "../components/Card.js";
-import FormValidator from "../components/Formvalidator.js";
+import FormValidator from "../components/FormValidator.js";
 
 const initialCards = [
   {
@@ -51,7 +51,6 @@ const modalImage = pictureModal.querySelector(".modal__image");
 const cardList = document.querySelector(".cards__list");
 
 const config = {
-  //formSelector: ".modal__form",
   inputSelector: ".modal__input",
   submitBtnSelector: ".modal__save",
   inactiveBtnClass: "modal__save_disabled",
@@ -65,7 +64,6 @@ function openModal(modal) {
   modal.classList.add("modal_open");
   modal.addEventListener("mousedown", closeOverlay);
   document.addEventListener("keydown", closeModalEsc);
-  cardFormValidator.resetValidation();
 }
 
 function closeModal(modal) {
@@ -90,6 +88,7 @@ function saveCards(event) {
   cardList.prepend(cardElement);
   closeModal(addCardModal);
   event.target.reset();
+  cardFormValidator.resetValidation();
 }
 
 initialCards.forEach((data) => {
@@ -135,6 +134,7 @@ cardFormValidator.enableValidation();
 profileEditBtn.addEventListener("click", () => {
   modalName.value = profileName.textContent;
   modalDescription.value = profileDescription.textContent;
+  cardFormValidator.resetValidation();
   openModal(editProfileModal);
 });
 
