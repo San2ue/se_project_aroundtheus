@@ -122,11 +122,11 @@ function closeOverlay(evt) {
   }
 }
 
-const editFormValidation = new FormValidator(config, profileForm);
+const editFormValidator = new FormValidator(config, profileForm);
 
 const cardFormValidator = new FormValidator(config, addForm);
 
-editFormValidation.enableValidation();
+editFormValidator.enableValidation();
 cardFormValidator.enableValidation();
 
 // Listeners
@@ -134,7 +134,7 @@ cardFormValidator.enableValidation();
 profileEditBtn.addEventListener("click", () => {
   modalName.value = profileName.textContent;
   modalDescription.value = profileDescription.textContent;
-  cardFormValidator.resetValidation();
+  editFormValidator.resetValidation();
   openModal(editProfileModal);
 });
 
