@@ -58,8 +58,8 @@ const userInfo = new UserInfo({
 // Functions
 
 //Card Image Zoom
-function handleZoomImage(name, link) {
-  previewPicture.open(name, link);
+function handleZoomImage({ name, link }) {
+  previewPicture.open({ name, link });
 }
 
 function saveProfile(profiledata) {

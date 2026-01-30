@@ -14,6 +14,7 @@ details in coming
 
 # skills
 
+- git/github
 - figma
 - CSS
 - HTML 5
@@ -26,3 +27,18 @@ details in coming
 # link to video
 
 1. [Link to video from project 3](https://drive.google.com/drive/folders/1EaZj8JIGo_lan4Zvc4Vb0eh-7-taryQK?usp=sharing)
+
+# project 8: Around the U.S.
+
+As of project 8 we now have a general understanding of javascript and using javascript classes to streamline and make our programs clear and concise. We also now have the general understanding of webpack, how to implement and modify the program to work with it.
+
+so to update the skills list would be this,
+
+# skills
+
+- git/github
+- figma
+- CSS
+- HTML 5
+- javascript (arrays, objects, functions, query calls, for/while, foreach, and =>(arrow functions))
+- webpack
