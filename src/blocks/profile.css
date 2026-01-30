@@ -4,7 +4,7 @@
   padding-top: 40px;
 }
 
-.profile__pic {
+.avatar__pic {
   border-radius: 50%;
   height: 120px;
   width: 120px;
@@ -87,7 +87,7 @@
     justify-content: center;
   }
 
-  .profile__title{
+  .profile__title {
     max-width: 375px;
   }
 

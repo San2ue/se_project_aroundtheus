@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -6,7 +6,7 @@
     <meta name="keywords" content="html, css, git, github" />
     <meta name="author" content="Sean May" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./pages/index.css" />
+
     <title>Around The US</title>
   </head>
   <body class="page">
@@ -14,16 +14,16 @@
       <header class="header page__section">
         <img
           class="header__logo"
-          src="./images/vectorlogo.svg"
+          src="<%=require('./images/vectorlogo.svg')%>"
           alt="Around the US"
         />
       </header>
       <main class="content page__section">
         <section class="profile">
           <img
-            class="profile__pic"
-            src="./images/jacques-cousteauprofile-pic.png"
-            alt="Profile Picture"
+            class="avatar__pic"
+            src="<%=require('./images/avatar.png')%>"
+            alt="Avatar"
           />
           <div class="profile__info">
             <h1 class="profile__name">Jacques Cousteau</h1>
@@ -131,13 +131,13 @@
 
       <div class="modal" id="picture-modal">
         <div class="modal__image-container">
-          <img src="" alt="" class="modal__image" />
+          <img src="" alt="" class="modal__image" id="modal-image" />
           <button
             aria-label="Close"
             class="modal__close"
             type="button"
           ></button>
-          <h4 class="modal__image-title"></h4>
+          <h4 class="modal__image-title" id="modal-image-title"></h4>
         </div>
       </div>
       <!--Card's Template-->
@@ -158,6 +158,5 @@
         </li>
       </template>
     </div>
-    <script type="module" src="./pages/index.js"></script>
   </body>
 </html>
