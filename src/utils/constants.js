@@ -28,6 +28,10 @@ export const initialCards = [
 // Elements
 export const profileEditBtn = document.querySelector(".profile__edit-button");
 export const profileAddBtn = document.querySelector(".profile__add-content");
+export const avatarEditBtn = document.querySelector(
+  ".profile__avatar-edit-button",
+);
+export const avatarForm = document.querySelector("edit-avatar");
 
 export const editProfileModal = document.querySelector("#edit-modal");
 export const profileForm = document.forms["edit-form"];
@@ -37,8 +41,6 @@ export const modalDescription = editProfileModal.querySelector(
 );
 
 export const addForm = document.forms["add-card"];
-export const modalTitle = addForm.querySelector(".modal__title");
-export const modalLink = addForm.querySelector(".modal__url");
 
 export const cardList = document.querySelector(".cards__list");
 
