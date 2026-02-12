@@ -6,29 +6,26 @@ export default class FormValidator {
     this._inputErrorClass = options.inputErrorClass;
     this._errorClass = options.errorClass;
     this._form = formElement;
-
-    this._inputElements = Array.from(
-      this._form.querySelectorAll(this._inputSelector)
-    );
+    this._inputElements = [...this._form.querySelectorAll(this._inputSelector)];
     this._buttonElements = this._form.querySelector(this._submitBtnSelector);
   }
 
   _showInputError(inputElement) {
-    const errorMsgElement = this._form.querySelector(
-      `#${inputElement.id}-error`
+    this._errorMsgElement = this._form.querySelector(
+      `#${inputElement.id}-error`,
     );
 
     inputElement.classList.add(this._inputErrorClass);
-    errorMsgElement.textContent = inputElement.validationMessage;
-    errorMsgElement.classList.add(this._errorClass);
+    this._errorMsgElement.textContent = inputElement.validationMessage;
+    this._errorMsgElement.classList.add(this._errorClass);
   }
 
   _hideInputError(inputElement) {
-    const errorElement = this._form.querySelector(`#${inputElement.id}-error`);
+    this._errorElement = this._form.querySelector(`#${inputElement.id}-error`);
 
     inputElement.classList.remove(this._inputErrorClass);
-    errorElement.textContent = "";
-    errorElement.classList.remove(this._errorClass);
+    this._errorElement.textContent = "";
+    this._errorElement.classList.remove(this._errorClass);
   }
 
   _checkInputValidity(inputElements) {
@@ -41,7 +38,7 @@ export default class FormValidator {
 
   _hasInvalidInput() {
     return !this._inputElements.every(
-      (inputElements) => inputElements.validity.valid
+      (inputElements) => inputElements.validity.valid,
     );
   }
 

@@ -20,19 +20,26 @@
       </header>
       <main class="content page__section">
         <section class="profile">
-          <img
-            class="avatar__pic"
-            src="<%=require('./images/avatar.png')%>"
-            alt="Avatar"
-          />
+          <div style="position: relative">
+            <img
+              class="avatar__picture"
+              src="<%=require('./images/avatar.png')%>"
+              alt="Avatar"
+            />
+            <button
+              class="profile__avatar-edit-button"
+              type="button"
+              aria-label="edit-avatar"
+            ></button>
+          </div>
           <div class="profile__info">
             <h1 class="profile__name">Jacques Cousteau</h1>
             <button
-              aria-label="Edit Profile"
+              aria-label="edit-profile"
               class="profile__edit-button"
               type="button"
             ></button>
-            <p class="profile__description">Explorer</p>
+            <p class="profile__description">Surveyor</p>
           </div>
           <button
             aria-label="add-content"
@@ -47,6 +54,33 @@
       <footer class="footer page__section">
         <p class="footer__copyright">&copy; 2022 Around the U.S.</p>
       </footer>
+      <!--Avatar Modal-->
+      <div class="modal" id="avatar-modal">
+        <div class="modal__container">
+          <button
+            aria-label="close"
+            class="modal__close"
+            type="button"
+          ></button>
+          <h3 class="modal__heading">Change profile picture</h3>
+          <form class="modal__form" id="edit-avatar" novalidate>
+            <label class="modal__label">
+              <input
+                type="url"
+                name="url"
+                id="avatar-url"
+                class="modal__url modal__input"
+                placeholder="Image link"
+                required
+              />
+              <span class="modal__error" id="avatar-url-error"></span>
+            </label>
+            <button class="modal__save modal__save_disabled" type="submit">
+              Save
+            </button>
+          </form>
+        </div>
+      </div>
       <!--Profile Modal-->
       <div class="modal" id="edit-modal">
         <div class="modal__container">
@@ -128,7 +162,6 @@
         </div>
       </div>
       <!--Picture modal-->
-
       <div class="modal" id="picture-modal">
         <div class="modal__image-container">
           <img src="" alt="" class="modal__image" id="modal-image" />
@@ -140,13 +173,29 @@
           <h4 class="modal__image-title" id="modal-image-title"></h4>
         </div>
       </div>
+      <!--Delete Modal-->
+      <div class="modal" id="confirm-delete-modal">
+        <div class="modal__container">
+          <button
+            aria-label="Close"
+            class="modal__close"
+            type="button"
+          ></button>
+          <h3 class="modal__heading">Are you sure?</h3>
+          <form class="modal__form" id="confirm-delete-card">
+            <button class="modal__save type="submit">
+              Save
+            </button>
+          </form>
+        </div>
+      </div>
       <!--Card's Template-->
       <template id="card__template">
         <li class="cards__item">
           <button type="button" class="cards__zoom">
             <img src="" alt="" class="cards__image" />
           </button>
-          <button class="cards__delete" type="button"></button>
+          <button class="cards__delete" type="button" aria-label="Delete"></button>
           <div class="cards__description">
             <h2 class="cards__title"></h2>
             <button
