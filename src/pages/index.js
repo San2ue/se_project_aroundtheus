@@ -1,5 +1,5 @@
 import "./index.css";
-import API from "../components/API.js";
+import Api from "../components/API.js";
 import Card from "../components/Card.js";
 import FormValidator from "../components/FormValidator.js";
 import Section from "../components/Section.js";
@@ -21,10 +21,10 @@ import {
 } from "../utils/constants.js";
 
 //imports
-const api = new API({
+const api = new Api({
   baseUrl: "https://around-api.en.tripleten-services.com/v1",
   headers: {
-    authorization: "5af52474-de0d-4418-ae3a-e40f7fe67743",
+    authorization: "7446d4da-3e8b-41bb-a0b1-a7c627f1654f",
     "Content-Type": "application/json",
   },
 });
@@ -36,7 +36,7 @@ api
       name: userData.name,
       description: userData.about,
     });
-    userInfo.changeAvatar({ avatar: userData.avatar });
+    userInfo.changeAvatarPicture(userData.avatar);
     cardSection.renderItems(cards);
   })
   .catch(console.error);
@@ -45,6 +45,9 @@ api
 const cardSection = new Section(
   {
     items: initialCards,
+    /*having problem when rendering initial cards. The Initial cards have no defined "ID", and therefore
+    can not be liked or removed. I think my initial cards need to be loaded with my api so that they 
+    post to the server, but not entirely sure. */
     renderer: (data) => {
       cardSection.addItem(getCardElement(data));
     },
@@ -55,7 +58,13 @@ const cardSection = new Section(
 
 //new Card
 function getCardElement(Data) {
-  const card = new Card(Data, "#card__template", handleZoomImage);
+  const card = new Card(
+    Data,
+    "#card__template",
+    handeleHeartCard,
+    handleRemoveCard,
+    handleZoomImage,
+  );
 
   return card.generateCard();
 }
@@ -72,6 +81,13 @@ changeAvatarPopup.setEventListeners();
 const newCardPopup = new PopupWithForm("#add-modal", saveCards);
 newCardPopup.setEventListeners();
 
+//Remove Card Popup
+const removeCardPopup = new PopupWithForm(
+  "#confirm-delete-modal",
+  handleRemoveCard,
+);
+removeCardPopup.setEventListeners();
+
 //Preview Image
 const previewPicture = new PopupWithImage("#picture-modal");
 previewPicture.setEventListeners();
@@ -84,43 +100,21 @@ const userInfo = new UserInfo({
 });
 
 // Functions
-
-//Card Image Zoom
-function handleZoomImage({ name, link }) {
-  previewPicture.open({ name, link });
-}
-
-/*function saveProfile(profiledata) {
-  const name = profiledata.name;
-  const description = profiledata.description;
-  userInfo.setUserInfo({ name, description });
-  editProfilePopup.close();
-  console.log(profiledata);
-} */
 //Save Profile Info
 function saveProfile(data) {
   editProfilePopup.renderLoading(true);
   api
-    .updateProfileInfo({ name: data.name, description: data.description })
+    .updateProfileInfo({ name: data.name, about: data.description })
     .then((data) => {
       userInfo.setUserInfo({ name: data.name, description: data.about });
       editProfilePopup.close();
-      console.log(profiledata);
+      console.log(data);
     })
     .catch(console.error)
     .finally(() => {
       editProfilePopup.renderLoading(false);
     });
 }
-
-/*function saveCards(data) {
-  const name = data.Title;
-  const link = data.url;
-  cardSection.addItem(getCardElement({ name, link }));
-  newCardPopup.close();
-  cardFormValidator.resetValidation();
-  console.log(data);
-}*/
 
 //Add New Card
 function saveCards(data) {
@@ -143,15 +137,47 @@ function saveCards(data) {
 function changeAvatar(data) {
   changeAvatarPopup.renderLoading(true);
   api
-    .updateProfileAvatar(data.link)
+    .updateProfileAvatar(data.url)
     .then((data) => {
-      userInfo.changeAvatarPicture(res);
-      changeAvatarPopup.close;
+      userInfo.changeAvatarPicture(data.avatar);
+      changeAvatarPopup.close();
     })
     .catch(console.error)
     .finally(() => {
       changeAvatarPopup.renderLoading(false);
     });
+}
+
+//Card Image Zoom
+function handleZoomImage({ name, link }) {
+  previewPicture.open({ name, link });
+}
+
+function handleRemoveCard(cardData) {
+  removeCardPopup.open();
+  removeCardPopup.setSubmitHandler(() => {
+    removeCardPopup.renderLoading(true);
+    api
+      .removeCard(cardData.getId())
+      .then(() => {
+        cardData.removeCard();
+        removeCardPopup.close();
+      })
+      .catch(console.error)
+      .finally(() => {
+        removeCardPopup.renderLoading(false);
+      });
+  });
+  console.log(cardData);
+}
+
+function handeleHeartCard(card) {
+  api
+    .likeCard(card.getId(), !card._isLiked)
+    .then((data) => {
+      card.handleHeart(data.isLiked);
+    })
+    .catch(console.error);
 }
 
 // Listeners

@@ -1,5 +1,5 @@
 export default class Api {
-  constructor(baseUrl, headers) {
+  constructor({ baseUrl, headers }) {
     this._baseUrl = baseUrl;
     this._headers = headers;
   }
@@ -28,18 +28,15 @@ export default class Api {
     }).then(this._handleResponse);
   }
 
-  updateProfileInfo(name, description) {
+  updateProfileInfo({ name, about }) {
     return fetch(`${this._baseUrl}/users/me`, {
       method: "PATCH",
       headers: this._headers,
-      body: JSON.stringify({
-        name,
-        about: description,
-      }),
+      body: JSON.stringify({ name, about }),
     }).then(this._handleResponse);
   }
 
-  updateProfileAvatar() {
+  updateProfileAvatar(url) {
     return fetch(`${this._baseUrl}/users/me/avatar`, {
       method: "PATCH",
       headers: this._headers,
@@ -49,7 +46,7 @@ export default class Api {
     }).then(this._handleResponse);
   }
 
-  addCard(name, link) {
+  addCard({ name, link }) {
     return fetch(`${this._baseUrl}/cards`, {
       method: "POST",
       headers: this._headers,
@@ -60,9 +57,9 @@ export default class Api {
     }).then(this._handleResponse);
   }
 
-  likeCard(cardId) {
+  likeCard(cardId, like) {
     return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
-      method: "PUT",
+      method: like ? "PUT" : "DELETE",
       headers: this._headers,
     }).then(this._handleResponse);
   }
@@ -74,7 +71,7 @@ export default class Api {
     }).then(this._handleResponse);
   }
 
-  deleteCard(cardId) {
+  removeCard(cardId) {
     return fetch(`${this._baseUrl}/cards/${cardId}`, {
       method: "DELETE",
       headers: this._headers,

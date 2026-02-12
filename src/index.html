@@ -68,7 +68,7 @@
               <input
                 type="url"
                 name="url"
-                id="card-url"
+                id="avatar-url"
                 class="modal__url modal__input"
                 placeholder="Image link"
                 required
@@ -182,8 +182,8 @@
             type="button"
           ></button>
           <h3 class="modal__heading">Are you sure?</h3>
-          <form class="modal__form" id="confirm-delete-card" novalidate>
-            <button class="modal__save modal__save_disabled" type="submit">
+          <form class="modal__form" id="confirm-delete-card">
+            <button class="modal__save type="submit">
               Save
             </button>
           </form>
@@ -195,7 +195,7 @@
           <button type="button" class="cards__zoom">
             <img src="" alt="" class="cards__image" />
           </button>
-          <button class="cards__delete" type="button"></button>
+          <button class="cards__delete" type="button" aria-label="Delete"></button>
           <div class="cards__description">
             <h2 class="cards__title"></h2>
             <button

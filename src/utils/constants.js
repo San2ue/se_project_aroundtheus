@@ -31,7 +31,7 @@ export const profileAddBtn = document.querySelector(".profile__add-content");
 export const avatarEditBtn = document.querySelector(
   ".profile__avatar-edit-button",
 );
-export const avatarForm = document.querySelector("edit-avatar");
+export const avatarForm = document.forms["edit-avatar"];
 
 export const editProfileModal = document.querySelector("#edit-modal");
 export const profileForm = document.forms["edit-form"];
