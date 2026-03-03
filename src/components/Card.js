@@ -11,7 +11,7 @@ export default class Card {
     this.name = data.name;
     this.image = data.link;
     this._id = data._id;
-    this._isliked = data.isliked;
+    this.isLiked = data.isLiked;
     this._cardSelector = cardSelector;
     this._handleHeartImage = handleHeartImage;
     this._handleZoomImage = handleZoomImage;
@@ -49,7 +49,7 @@ export default class Card {
   }
 
   updateHearts() {
-    if (this._isLiked) {
+    if (this.isLiked) {
       this._heartBtn.classList.add("cards__heart_active");
     } else {
       this._heartBtn.classList.remove("cards__heart_active");
@@ -57,7 +57,7 @@ export default class Card {
   }
 
   handleHeart(isLiked) {
-    this._isLiked = isLiked;
+    this.isLiked = isLiked;
     this.updateHearts();
   }
 

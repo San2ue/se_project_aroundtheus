@@ -7,7 +7,6 @@ import PopupWithImage from "../components/PopupWithImage.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import UserInfo from "../components/UserInfo.js";
 import {
-  initialCards,
   profileEditBtn,
   profileAddBtn,
   avatarEditBtn,
@@ -29,6 +28,9 @@ const api = new Api({
   },
 });
 
+//Section
+let cardSection;
+
 api
   .getAppInfo()
   .then(([userData, cards]) => {
@@ -36,25 +38,21 @@ api
       name: userData.name,
       description: userData.about,
     });
+
     userInfo.changeAvatarPicture(userData.avatar);
-    cardSection.renderItems(cards);
+
+    cardSection = new Section(
+      {
+        items: cards,
+        renderer: (data) => {
+          cardSection.addItem(getCardElement(data));
+        },
+      },
+      cardList,
+    );
+    cardSection.renderItems();
   })
   .catch(console.error);
-
-//Section
-const cardSection = new Section(
-  {
-    items: initialCards,
-    /*having problem when rendering initial cards. The Initial cards have no defined "ID", and therefore
-    can not be liked or removed. I think my initial cards need to be loaded with my api so that they 
-    post to the server, but not entirely sure. */
-    renderer: (data) => {
-      cardSection.addItem(getCardElement(data));
-    },
-  },
-  cardList,
-);
-//cardSection.renderItems();
 
 //new Card
 function getCardElement(Data) {
@@ -173,7 +171,7 @@ function handleRemoveCard(cardData) {
 
 function handeleHeartCard(card) {
   api
-    .likeCard(card.getId(), !card._isLiked)
+    .toggleLikeCard(card.getId(), !card.isLiked)
     .then((data) => {
       card.handleHeart(data.isLiked);
     })
